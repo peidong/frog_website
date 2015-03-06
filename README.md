@@ -19,6 +19,12 @@ URL: basil.ee.ucla.edu
 Introductions for Installing Frog on Linux servers
 ----------------------------
 ### 1. Install Klee:
-Following this website to install Klee [Klee 3.4](http://klee.github.io/experimental/)<br />
+Follow this website to install Klee [Klee 3.4](http://klee.github.io/experimental/)<br />
 You may have unknown issues when installing [Klee 2.9](http://klee.github.io/getting-started/)<br />
+1.1 Install dependencies
+    sudo apt-get install build-essential curl git bison flex bc libcap-dev git cmake libboost-all-dev libncurses5-dev python-minimal python-pip unzip
+1.2 set environment variables in ~/.bashrc
+    export C_INCLUDE_PATH=/usr/include/x86_64-linux-gnu
+    export CPLUS_INCLUDE_PATH=/usr/include/x86_64-linux-gnu
+1.3 Install LLVM 3.4
 ### 2. 
