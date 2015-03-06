@@ -16,5 +16,9 @@ Frog is a platform for automatic software testing. It helps to locate potential 
 Frog now supports C program testing.
 URL: basil.ee.ucla.edu
 
-Introductions for Installing Frog on your server
+Introductions for Installing Frog on Linux servers
 ----------------------------
+### 1. Install Klee:
+Following this website to install Klee [Klee 3.4](http://klee.github.io/experimental/)<br />
+You may have unknown issues when installing [Klee 2.9](http://klee.github.io/getting-started/)<br />
+### 2. 
