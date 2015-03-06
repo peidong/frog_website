@@ -2,6 +2,9 @@
 Frog Online Test Website
 ===============================
 
+Features
+---------------------------
+
 Frog is a platform for automatic software testing. It helps to locate potential bugs by 3 simple steps
 
 1. Upload source code, then test suites with will be generated and replayed automatically.
@@ -12,3 +15,6 @@ Frog is a platform for automatic software testing. It helps to locate potential 
 
 Frog now supports C program testing.
 URL: basil.ee.ucla.edu
+
+Introductions for Installing Frog on your server
+----------------------------
