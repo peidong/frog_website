@@ -30,4 +30,27 @@ You may have unknown issues when installing [Klee 2.9](http://klee.github.io/get
         export C_INCLUDE_PATH=/usr/include/x86_64-linux-gnu
         export CPLUS_INCLUDE_PATH=/usr/include/x86_64-linux-gnu
 1.3 Install LLVM 3.4
+
+sudo add 2 lines in /etc/apt/sources.list
+
+        deb http://llvm.org/apt/trusty/ llvm-toolchain-trusty-3.4 main  
+        deb-src http://llvm.org/apt/trusty/ llvm-toolchain-trusty-3.4 main
+
+do these in command line
+
+        wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key|sudo apt-key add -
+        sudo apt-get update
+        sudo apt-get install clang-3.4 llvm-3.4 llvm-3.4-dev llvm-3.4-tools
+        sudo ln -sf /usr/bin/llvm-config-3.4 /usr/bin/llvm-config
+
+1.4 Build STP
+        
+Go to the directory that you want to install the program
+        
+        git clone https://github.com/stp/stp.git
+        mkdir stp/build
+        cd stp/build
+        cmake -DBUILD_SHARED_LIBS:BOOL=OFF -DENABLE_PYTHON_INTERFACE:BOOL=OFF ..
+        make
+        sudo make install
 ### 2. 
