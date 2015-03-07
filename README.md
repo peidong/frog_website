@@ -171,3 +171,17 @@ settings
 change the content in the file
 
         $mysql_user='ubuntu';        
+
+Then open the signup permission temperarily
+
+        cd ..
+        vim index.html
+
+Delete the "hidden" word in line 70, so that it will be:
+
+        <!-- User Signup -->
+        <form class="form-inline" method="post" action="server/signup.php">        
+
+make sure you need to add "hidden" once you have complete your work
+
+![signup_hidden](https://raw.githubusercontent.com/peidong/frog_website/master/doc/photos/signup_hidden.png)
