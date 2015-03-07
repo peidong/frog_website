@@ -6,7 +6,7 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
  
-$conn = mysql_connect('localhost', 'root', '');
+$conn = mysql_connect('localhost', 'ubuntu', '');
 mysql_select_db('login', $conn);
  
 $username = mysql_real_escape_string($username);

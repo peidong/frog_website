@@ -1,6 +1,6 @@
  <?php
  // Define KLEE
- define('KLEE_EXECUTABLE', "/home/qirong/Frog/frog_test/tools/KLEE_SOURCE_2015/klee/Release+Asserts/bin/klee "); 
+ define('KLEE_EXECUTABLE', "/home/ubuntu/Developer/ProgramFiles/klee/build/Release+Asserts/bin/klee "); 
  define('KLEE_OPTIONS' , "--allow-external-sym-calls -max-time=10 "); 
 
 session_start();

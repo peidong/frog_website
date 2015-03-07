@@ -26,7 +26,7 @@ $password = hash('sha256', $salt . $hash);
 //Check connection
 //$conn = mysql_connect('localhost', 'root', '');
 $servername='localhost';
-$mysql_user='root';
+$mysql_user='ubuntu';
 $mysql_password='';
 $dbname='login';
 $conn = new mysqli($servername, $mysql_user, $mysql_password, $dbname);
