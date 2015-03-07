@@ -94,7 +94,32 @@ Note: It should be that:
 
         make DISABLE_ASSERTIONS=0 ENABLE_OPTIMIZED=1 ENABLE_SHARED=0 -j2
         vim ~/.bashrc
-        alias klee='/home/ubuntu/Developer/ProgramFiles/klee/build/Release+Asserts/b    in/klee'
-        alias ktest-tool='/home/ubuntu/Developer/ProgramFiles/klee/build/Release+Ass    erts/bin/ktest-tool'    
+        alias klee='/home/ubuntu/Developer/ProgramFiles/klee/build/Release+Asserts/bin/klee'
+        alias ktest-tool='/home/ubuntu/Developer/ProgramFiles/klee/build/Release+Asserts/bin/ktest-tool'    
 
-### 2. 
+### 2. Get the Frog_website code
+
+Go to your Project directory
+
+        git clone https://github.com/peidong/frog_website.git
+
+### 2. Install Apache server
+
+2.1 Install
+
+        sudo apt-get install apache2
+        
+Go to browser to check http://localhost
+
+2.2 Settings for Apache
+
+        cd /etc/apache2/
+        sudo vim apache2.conf
+
+add these five lines at line 170
+
+        <Directory /home/ubuntu/Developer/Projects/frog_website/>
+	        Options Indexes FollowSymLinks
+	        AllowOverride None
+	        Require all granted
+        </Directory>
