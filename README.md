@@ -29,7 +29,8 @@ You may have unknown issues when installing [Klee 2.9](http://klee.github.io/get
 
         export C_INCLUDE_PATH=/usr/include/x86_64-linux-gnu
         export CPLUS_INCLUDE_PATH=/usr/include/x86_64-linux-gnu
-1.3 Install LLVM 3.4
+
+1.3 Install LLVM 3.4:
 
 sudo add 2 lines in /etc/apt/sources.list
 
@@ -43,7 +44,7 @@ do these in command line
         sudo apt-get install clang-3.4 llvm-3.4 llvm-3.4-dev llvm-3.4-tools
         sudo ln -sf /usr/bin/llvm-config-3.4 /usr/bin/llvm-config
 
-1.4 Build STP
+1.4 Build STP:
         
 Go to the directory that you want to install the program
         
@@ -53,4 +54,47 @@ Go to the directory that you want to install the program
         cmake -DBUILD_SHARED_LIBS:BOOL=OFF -DENABLE_PYTHON_INTERFACE:BOOL=OFF ..
         make
         sudo make install
+        cd ..
+        ulimit -s unlimited
+
+1.5 Build uclibc and the POSIX environment model:
+
+Go to the directory that you want to install the program
+
+        git clone https://github.com/klee/klee-uclibc.git
+        cd klee-uclibc
+        ./configure --make-llvm-lib
+        make -j2
+        cd ..
+
+1.6 Build libgtest:
+
+Go to the directory that you want to install the program
+
+        curl -OL https://googletest.googlecode.com/files/gtest-1.7.0.zip
+        unzip gtest-1.7.0.zip
+        cd gtest-1.7.0
+        cmake .
+        make
+        cd ..
+
+1.7 Get KLEE source and build:
+
+Go to the directory that you want to install the program
+
+        git clone https://github.com/klee/klee.git
+        cd klee
+        mkdir build
+        cd build
+        ../configure --with-stp=/full/path/to/stp/build --with-uclibc=/full/path/to/klee-uclibc --enable-posix-runtime
+
+Note: It should be that:
+
+../configure --with-stp=/home/ubuntu/Developer/ProgramFiles/stp/build --with-uclibc=/home/ubuntu/Developer/ProgramFiles/klee-uclibc --enable-posix-runtime
+
+        make DISABLE_ASSERTIONS=0 ENABLE_OPTIMIZED=1 ENABLE_SHARED=0 -j2
+        vim ~/.bashrc
+        alias klee='/home/ubuntu/Developer/ProgramFiles/klee/build/Release+Asserts/b    in/klee'
+        alias ktest-tool='/home/ubuntu/Developer/ProgramFiles/klee/build/Release+Ass    erts/bin/ktest-tool'    
+
 ### 2. 
