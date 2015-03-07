@@ -135,7 +135,7 @@ edit these
         export APACHE_RUN_USER=ubuntu
         export APACHE_RUN_GROUP=ubuntu
 
-and add these lines at the end of the file [reference](http://askubuntu.com/questions/204159/add-path-to-path-environment-variable-for-www-data"
+and add these lines at the end of the file [reference](http://askubuntu.com/questions/204159/add-path-to-path-environment-variable-for-www-data"<br />
 
         export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:(other paths like llvm-gcc path)
         export C_INCLUDE_PATH=/usr/include/x86_64-linux-gnu
