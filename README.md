@@ -103,15 +103,15 @@ Go to your Project directory
 
         git clone https://github.com/peidong/frog_website.git
 
-### 2. Install Apache server
+### 3. Install Apache server
 
-2.1 Install
+3.1 Install
 
         sudo apt-get install apache2
         
 Go to browser to check http://localhost
 
-2.2 Settings for Apache
+3.2 Settings for Apache
 
         cd /etc/apache2/
         sudo vim apache2.conf
@@ -153,3 +153,16 @@ Then run the commands
         sudo service apache2 restart
 
 Then go to browser to check http://localhost
+
+### 4. Install MySQL
+
+        sudo apt-get install mysql-server #don't input root passwd
+        sudo mysql
+        CREATE USER 'ubuntu'@'localhost';
+        GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'localhost';
+        FLUSH PRIVILEGES;
+
+settings
+
+        cd ~/Developer/Projects/frog_website/server
+        
