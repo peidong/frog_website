@@ -141,8 +141,9 @@ Then change directory
         sudo cp 000-default.conf frog.conf 
         sudo vim frog.conf
 
-change this line
+change this lines
 
+        ServerAdmin ubuntu@localhost
         DocumentRoot /home/ubuntu/Developer/Projects/frog_website
 
 Then run the commands
@@ -185,3 +186,8 @@ Delete the "hidden" word in line 70, so that it will be:
 make sure you need to add "hidden" once you have complete your work
 
 ![signup_hidden](https://raw.githubusercontent.com/peidong/frog_website/master/doc/photos/signup_hidden.png)
+
+### 5. Install PHP
+
+        #sudo apt-get install php5
+        sudo apt-get install php5-mysql
