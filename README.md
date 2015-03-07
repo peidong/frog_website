@@ -165,4 +165,9 @@ Then go to browser to check http://localhost
 settings
 
         cd ~/Developer/Projects/frog_website/server
-        
+        mysql < initialize.sql
+        vim signup.php
+
+change the content in the file
+
+        $mysql_user='ubuntu';        
