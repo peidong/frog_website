@@ -211,3 +211,19 @@ change these lines
 
 define('COMPILE','clang-3.4 -emit-llvm -c -g '); 
 define('KLEE_INCLUDE','/home/ubuntu/Developer/Projects/frog_website/tools/KLEE_SOURCE_2015/klee/include/klee ');
+
+        cd ../Frog
+        vim extract_functions2.py
+
+at line 247, change to return 0;
+
+        appendCode += "\treturn 0;\n"
+
+### 7. Change Klee settings
+
+        cd server
+        vim run_klee.php
+
+Change this line
+
+        define('KLEE_EXECUTABLE', "/home/ubuntu/Developer/ProgramFiles/klee/build/Release+Asserts/bin/klee");
