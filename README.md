@@ -124,4 +124,4 @@ add these five lines at line 170
 	        Require all granted
         </Directory>
 
-![apache2.conf](https://github.com/peidong/frog_website/tree/master/)
+![apache2.conf](https://github.com/peidong/frog_website/tree/master/doc/photos/apache2.conf.png)
