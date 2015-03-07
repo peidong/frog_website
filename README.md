@@ -187,7 +187,27 @@ make sure you need to add "hidden" once you have complete your work
 
 ![signup_hidden](https://raw.githubusercontent.com/peidong/frog_website/master/doc/photos/signup_hidden.png)
 
+modify your login.php
+
+        cd server
+        vim login.php
+
+change this line:
+
+        $conn = mysql_connect('localhost', 'ubuntu', '');        
+
+
 ### 5. Install PHP
 
         #sudo apt-get install php5
         sudo apt-get install php5-mysql
+
+### 6. Change llvm-gcc settings
+
+        cd server
+        vim compile.php
+
+change these lines
+
+define('COMPILE','clang-3.4 -emit-llvm -c -g '); 
+define('KLEE_INCLUDE','/home/ubuntu/Developer/Projects/frog_website/tools/KLEE_SOURCE_2015/klee/include/klee ');
