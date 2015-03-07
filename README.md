@@ -125,3 +125,31 @@ add these five lines at line 170
         </Directory>
 
 ![apache2.conf](https://raw.githubusercontent.com/peidong/frog_website/master/doc/photos/apache2.conf.png)
+
+and change the first few lines in envvars
+
+        sudo vim envvars
+
+edit these
+
+        export APACHE_RUN_USER=ubuntu
+        export APACHE_RUN_GROUP=ubuntu
+
+Then change directory        
+
+        cd sites-available/
+        sudo cp 000-default.conf frog.conf 
+        sudo vim frog.conf
+
+change this line
+
+        DocumentRoot /home/ubuntu/Developer/Projects/frog_website
+
+Then run the commands
+
+        sudo a2dissite 000-default.conf
+        sudo a2ensite frog.conf
+        sudo service apache2 reload
+        sudo service apache2 restart
+
+Then go to browser to check http://localhost
