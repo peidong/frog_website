@@ -2,25 +2,26 @@ int mid( int x, int y, int z )
 {
     int m;
     m=z;
-    if(y<z){
+    if(y<z)
+    {
         if(x<y)
             m=y;
         else if(x<z)
             m=y;  //Bug
     }
-    else{
+    else
+    {
         if(x>y)
             m=y;
         else if(x>z)
             m=x;
-    } 
+    }
     return m;
 }
 int max( int x)
 {
     return x;
 }
-
 #include "klee.h"
 int main() {
 	int a0;
@@ -30,5 +31,5 @@ int main() {
 	int a2;
 	klee_make_symbolic(&a2,sizeof(a2),"a2");
 	int result=mid(a0,a1,a2);
-	return;
+	return 0;
 }

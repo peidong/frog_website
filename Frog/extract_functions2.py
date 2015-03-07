@@ -244,7 +244,7 @@ for fid in range(len(kleeFunc)):
 			if i < len(argType)-1:
 				appendCode += ","
 		appendCode += ");\n"
-		appendCode += "\treturn;\n"
+		appendCode += "\treturn 0;\n"
 		appendCode += "}"
 
 		f.write(appendCode)
